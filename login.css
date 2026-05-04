@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #2596be, #0f4052 100%);
+  background-attachment: fixed;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #92d1e8;
+}
+
+.login-logo {
+  width: 150px;
+  position: fixed;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 90%;
+}
+
+.login-container-align {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  color: white;
+}
+
+a {
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: 400px;
+  height: auto;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 40%;
+  background: linear-gradient(160deg, #1d7898, #15556c 100%);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.login-container input {
+  padding-left: 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  border: 2px solid #92d1e8;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background-color: transparent;
+  color: #92d1e8;
+}
+
+.login-container input:focus {
+  outline: none;
+}
+
+.login-container input::placeholder {
+  color: white;
+}
+
+.login-btn {
+  background-color: #92d1e8;
+  border: none;
+  padding: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sign-up-btn {
+  background-color: transparent;
+  border: none;
+  color: #92d1e8;
+  padding: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0f4052;
+  color: #92d1e8;
+}
+
+.sign-up-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    width: 80%;
+  }
+}

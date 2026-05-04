@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spreadsheet</title>
+    <link rel="stylesheet" href="spreadsheet.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="heading-container">
+            <button class="back-btn" onclick="window.location.href='/'">Back</button>
+            <h1>Mileage Log</h1>
+            <button class="export-btn" id="export-btn">Export CSV</button>
+        </div>
+
+        <div class="table-container">
+            <table id="visits-table">
+                <thead>
+                    <tr>
+                        <th>Travel Date</th>
+                        <th>Client</th>
+                        <th>Program</th>
+                        <th>Start Location</th>
+                        <th>Finish Location</th>
+                        <th>Reason for Travel</th>
+                        <th>Odometer Start</th>
+                        <th>Odometer Finish</th>
+                        <th>Total Miles</th>
+                        <th>IRS Reimbursement</th>
+                    </tr>
+                </thead>
+                <tbody id="visits-body">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8"><strong>Totals</strong></td>
+                        <td id="total-miles"></td>
+                        <td id="total-reimbursement"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="spreadsheet.js"></script>
+</body>
+</html>

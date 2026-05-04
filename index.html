@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+
+    <div id="splash-screen">
+        <img class="splash-logo" src="images/MA-logo.png" alt="Mileage Assist Logo">
+
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <div class="page-container">
+
+        <div class="user-info-container-align">
+            <div class="user-info-container">
+                <h3></h3>
+                <h3></h3>
+                <button onclick="confirmLogout();" class="logout-btn">Logout</button>
+            </div>
+
+            <div class="logout-confirm">
+                <h3>Are you sure you want to logout?</h3>
+                <div class="yes-no">
+                    <button id="yes-btn" onclick="loginRedirect();">Yes</button>
+                    <button id="no-btn" onclick="loginRedirect();">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="heading-container">
+            <div class="menu-btn-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </div>
+
+            <div class="profile-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="name-card-dropdown-icon" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                </svg>
+
+                <h2>Tyler</h2>
+                <img class="profile-img" src="/images/person-circle.svg" alt="Profile Image">
+            </div>
+        </div>
+
+        <div class="contacts-container">
+            <div class="heading-search">
+                <h1>Clients</h1>
+                <input class="search-bar" type="text" placeholder="Search">
+
+                <div class="name-cards-background">
+                    <div class="name-cards-container">
+
+                    </div>
+                </div>
+            </div>
+
+            <button id="add-contact-btn" class="add-contact-btn">
+                <img class="plus-btn-style" src="/images/add-contact-btn.png" alt="Add Contact">
+            </button>
+        </div>
+
+    </div>
+
+    <div id="add-contact-form" class="add-contact-form">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="exit-btn" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+        </svg>
+
+        <h2>Client Information</h2>
+        <input id="first-name" type="text" placeholder="First name">
+        <input id="last-name" type="text" placeholder="Last name">
+        <input id="program" type="text" placeholder="Program (Eg: MDFT, SAP, OP)">
+        <button id="done-btn" class="done-btn">Done &#10003</button>
+    </div>
+
+    <div id="lightbox">
+        <!-- Lightbox Container -->
+    </div>
+
+    <div id="navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="exit-btn-nav" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+        </svg>
+
+        <ul>
+            <li onclick="window.location.href='/index.html'">Home</li>
+            <li onclick="window.location.href='/spreadsheet'">Spreadsheet</li>
+        </ul>
+    </div>
+
+    <script type="module" src="mobile.js"></script>
+
+</body>
+</html>
