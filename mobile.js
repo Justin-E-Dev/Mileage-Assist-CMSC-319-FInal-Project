@@ -40,6 +40,12 @@ userInfoContainer.hidden = true;
 userInfoContainerAlign.hidden = true;
 navigation.hidden = true;
 
+window.history.pushState(null, "", window.location.href);
+
+window.addEventListener("popstate", function () {
+    window.history.pushState(null, "", window.location.href);
+});
+
 // Profile dropdown
 profileContainer.addEventListener("click", () => {
     if (userInfoContainerAlign.hidden === true) {
@@ -204,24 +210,22 @@ doneBtn.addEventListener("click", async () => {
     lightbox.hidden = true;
 });
 
-
 const searchBar = document.querySelector(".search-bar");
 
 searchBar.addEventListener("input", function () {
-  const searchText = searchBar.value.toLowerCase();
-  const nameCards = document.querySelectorAll(".name-card");
+    const searchText = searchBar.value.toLowerCase();
+    const nameCards = document.querySelectorAll(".name-card");
 
-  nameCards.forEach(function (card) {
-    const cardText = card.textContent.toLowerCase();
+    nameCards.forEach(function (card) {
+        const cardText = card.textContent.toLowerCase();
 
-    if (cardText.includes(searchText)) {
-      card.hidden = false;
-    } else {
-      card.hidden = true;
-    }
-  });
+        if (cardText.includes(searchText)) {
+            card.hidden = false;
+        } else {
+            card.hidden = true;
+        }
+    });
 });
-
 
 // Auth guard and load clients
 
@@ -241,6 +245,9 @@ onAuthStateChanged(auth, async (user) => {
 
         const response = await fetch(`/clients?user_uid=${user.uid}`);
         const clients = await response.json();
+
+        nameCardsContainer.innerHTML = "";
+
         clients.forEach(c => createClientCard(c.first_name, c.last_name, c.program, c.id));
     }
 });
