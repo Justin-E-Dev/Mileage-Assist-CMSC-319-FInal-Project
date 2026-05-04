@@ -5,6 +5,7 @@ from datetime import datetime
 
 app = Flask(__name__, static_folder=".", static_url_path="")
 CORS(app)
+
 def get_db():
     conn = sqlite3.connect("clients.db")
     conn.row_factory = sqlite3.Row
@@ -55,13 +56,14 @@ def get_clients():
 def add_client():
     data = request.get_json()
     conn = get_db()
-    conn.execute(
+    cursor = conn.execute(
         "INSERT INTO clients (user_uid, first_name, last_name, program) VALUES (?, ?, ?, ?)",
         (data["user_uid"], data["first_name"], data["last_name"], data["program"])
     )
     conn.commit()
+    client_id = cursor.lastrowid
     conn.close()
-    return jsonify({"message": "Client added!"})
+    return jsonify({"message": "Client added!", "id": client_id})
 
 @app.route("/visits", methods=["POST"])
 def add_visit():
@@ -94,7 +96,7 @@ def get_visits():
 def spreadsheet():
     return app.send_static_file("spreadsheet.html")
 
-
 init_db()
+
 if __name__ == "__main__":
     app.run(debug=True)
